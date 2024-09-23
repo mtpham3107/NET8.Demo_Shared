@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+﻿@{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+    ViewBag.Title = Localizer["Error.LockedAccount"];
+}
+
+<h1 class="fw-bolder fs-2qx text-gray-900 mb-4">@Localizer["Error.LockedAccount"]</h1>
+<div class="fw-semibold fs-6 text-gray-500 mb-7">@Localizer["PleaseTryAgain"]</div>
+<div class="mb-11">
+    <img src="/media/auth/lock.png" class="mw-100 mh-300px theme-light-show" alt="" />
+</div>
+<div class="mb-0">
+    <a href="@Url.Action("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl })" class="btn btn-primary">@Localizer["Login"]</a>
+</div>
+

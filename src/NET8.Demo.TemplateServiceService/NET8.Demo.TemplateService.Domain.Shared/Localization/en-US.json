@@ -1,0 +1,15 @@
+﻿{
+  "Error.DataNotFound": "Data not found",
+  "Error.UserNotFound": "User not found",
+  "Error.InvalidToken": "The token is invalid or expired",
+  "Error.LockedAccount": "Your account has been locked",
+  "Error.Unauthorized": "Unauthorized",
+  "Error.SystemError": "System error",
+  "Error.SomethingWentWrong": "Something went wrong! Please try again later",
+  "Error.PageNotFound": "We can't find that page",
+  "Error.NotFound": "Not found",
+
+  "File.NoFileUpload": "No file uploaded",
+  "File.InvalidUrl": "File URL can't be null or empty",
+  "File.FileNotFound": "File not found"
+}

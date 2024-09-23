@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Hangfire.Core" Version="1.8.14" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.14" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NET8.Demo.Shared\NET8.Demo.RabbitMQ\NET8.Demo.RabbitMQ.csproj" />
+    <ProjectReference Include="..\NET8.Demo.GlobalAdmin.Application.Contracts\NET8.Demo.GlobalAdmin.Application.Contracts.csproj" />
+    <ProjectReference Include="..\NET8.Demo.GlobalAdmin.Domain\NET8.Demo.GlobalAdmin.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NET8.Demo.Redis">
+      <HintPath>..\..\NET8.Demo.Shared\NET8.Demo.Redis\bin\Debug\net8.0\NET8.Demo.Redis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

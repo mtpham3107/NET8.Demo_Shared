@@ -1,0 +1,94 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title </title>
+    <link href="/css/fonts.css" rel="stylesheet" />
+    <link href="/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="kt_body" class="auth-bg bgi-size-cover bgi-attachment-fixed bgi-position-center bgi-no-repeat">
+    <script>
+        var defaultThemeMode = "light";
+        var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            }
+            else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+
+        async function loadLocalization() {
+            let result = {}
+            try {
+                const response = await fetch('/api/localizations/get-localized');
+                if (response.ok) {
+                    result = await response.json();
+                }
+            } catch (error) {
+                console.error('Error fetching localized strings:', error);
+            }
+            return result
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: url('/media/auth/bg9.jpg');
+        }
+
+        [data-bs-theme="dark"] body {
+            background-image: url('/media/auth/bg9-dark.jpg');
+        }
+    </style>
+
+    <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+        <!--begin::Aside-->
+        <div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
+            <div class="d-flex flex-center flex-lg-start flex-column">
+                <a href="index.html" class="mb-7">
+                    <img alt="Logo" src="/media/logos/logo.svg" />
+                </a>
+                <h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
+            </div>
+        </div>
+        <!--begin::Aside-->
+        <!--begin::Body-->
+        <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
+            <div class="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-20">
+                <div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
+                    @RenderBody()
+                </div>
+                <!--begin::Footer-->
+                <div class="d-flex flex-stack px-lg-10">
+                    <div class="me-0">
+                        @await Html.PartialAsync("_CultureSelector")
+                    </div>
+                    <div class="d-flex fw-semibold text-primary fs-base gap-5">
+                        <a href="#" target="_blank">@Localizer["TermsLink"]</a>
+                        <a href="#" target="_blank">@Localizer["ContactLink"]</a>
+                    </div>
+                </div>
+                <!--end::Footer-->
+            </div>
+        </div>
+        <!--end::Body-->
+    </div>
+
+    <script src="/plugins/global/plugins.bundle.js"></script>
+    <script src="/js/scripts.bundle.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

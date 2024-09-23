@@ -1,0 +1,73 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model NET8.Demo.GlobalAdmin.Models.RegisterViewModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewBag.Title = Localizer["Register"];
+}
+<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" method="post" action="@Url.Action("Register", "Account", new { Model.ReturnUrl })">
+    @Html.AntiForgeryToken()
+    <div class="text-center mb-11">
+        <h1 class="text-gray-900 fw-bolder mb-3">@Localizer["Register"]</h1>
+        <div class="text-gray-500 fw-semibold fs-6">Your company name</div>
+    </div>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="d-flex gap-4">
+        <div class="fv-row mb-8">
+            <input type="text" placeholder="@Localizer["Register.FirstName"]" name="firstName" autocomplete="off" class="form-control bg-transparent" value="@Model?.FirstName" />
+        </div>
+
+        <div class="fv-row mb-8">
+            <input type="text" placeholder="@Localizer["Register.LastName"]" name="lastName" autocomplete="off" class="form-control bg-transparent" value="@Model?.LastName" />
+        </div>
+    </div>
+    <div class="fv-row mb-8">
+        <input type="text" placeholder="@Localizer["Email"]" name="email" autocomplete="off" class="form-control bg-transparent" value="@Model?.Email" />
+    </div>
+    <div class="fv-row mb-8" data-kt-password-meter="true">
+        <div class="mb-1">
+            <div class="position-relative mb-3">
+                <input class="form-control bg-transparent" type="password" placeholder="@Localizer["Password"]" name="password" autocomplete="off" />
+                <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                    <i class="ki-duotone ki-eye-slash fs-2"></i>
+                    <i class="ki-duotone ki-eye fs-2 d-none"></i>
+                </span>
+            </div>
+            <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+            </div>
+        </div>
+        <div class="text-muted">@Localizer["PasswordHint"]</div>
+    </div>
+    <div class="fv-row mb-8">
+        <input placeholder="@Localizer["Register.ConfirmPassword"]" name="confirmPassword" type="password" autocomplete="off" class="form-control bg-transparent" />
+    </div>
+    <div class="fv-row mb-8">
+        <label class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="toc" value="1" />
+            <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">
+                @Localizer["Register.Accept"]
+                <a href="#" class="ms-1 link-primary">@Localizer["TermsLink"]</a>
+            </span>
+        </label>
+    </div>
+    <div class="d-grid mb-10">
+        <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
+            <span class="indicator-label">@Localizer["Register"]</span>
+            <span class="indicator-progress">
+                @Localizer["PleaseWait"]
+                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+            </span>
+        </button>
+    </div>
+    <div class="text-gray-500 text-center fw-semibold fs-6">
+        @Localizer["Register.HaveAMemberYet"]
+        <a href="@Url.Action("Login", "Account", new { Model.ReturnUrl })" class="link-primary fw-semibold">@Localizer["Login"]</a>
+    </div>
+</form>
+@section scripts {
+    <script src="/js/authentication/sign-up/general.js"></script>
+}

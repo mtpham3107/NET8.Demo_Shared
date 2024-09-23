@@ -1,0 +1,15 @@
+﻿{
+  "Error.DataNotFound": "Không tìm thấy dữ liệu",
+  "Error.UserNotFound": "Không tìm thấy người dùng",
+  "Error.InvalidToken": "Token không hợp lệ hoặc đã hết hạn",
+  "Error.LockedAccount": "Tài khoản của bạn đã bị khóa",
+  "Error.Unauthorized": "Bạn không có quyền truy cập",
+  "Error.SystemError": "Lỗi hệ thống",
+  "Error.SomethingWentWrong": "Đã có lỗi xảy ra! Vui lòng thử lại sau",
+  "Error.PageNotFound": "Không tìm thấy trang",
+  "Error.NotFound": "Không tìm thấy",
+
+  "File.NoFileUpload": "Chưa có tệp nào được tải lên",
+  "File.InvalidUrl": "Địa chỉ URL của tệp không được để trống hoặc không hợp lệ",
+  "File.FileNotFound": "Tệp không tồn tại"
+}

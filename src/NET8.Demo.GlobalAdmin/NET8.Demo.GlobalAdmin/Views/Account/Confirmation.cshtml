@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@using NET8.Demo.GlobalAdmin.Models
+@model ConfirmationViewModel
+@{
+    ViewBag.Title = Localizer["Confirmation"];
+    Layout = "/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="d-flex flex-column flex-center text-center">
+    <div class="mb-14">
+        <a href="index.html" class="">
+            <img alt="Logo" src="/media/logos/logo.svg" class="h-40px" />
+        </a>
+    </div>
+    <h1 class="fw-bolder text-gray-900 mb-5">@Model.Title</h1>
+    <div class="fs-6 fw-semibold text-gray-500 mb-10">
+        @Model.Message
+    </div>
+    <div class="mb-11">
+        <a href="@Url.Action("Login", "Account", new { Model.ReturnUrl })" class="btn btn-primary">@Localizer["Login"]</a>
+    </div>
+    <div class="mb-0">
+        <img src="/media/auth/ok.png" class="mw-100 mh-300px theme-light-show" alt="">
+        <img src="/media/auth/ok-dark.png" class="mw-100 mh-300px theme-dark-show" alt="">
+    </div>
+</div>
