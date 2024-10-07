@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Microsoft.OpenApi.Models;
-using NET8.Demo.RabbitMQ;
-using NET8.Demo.Redis;
 using NET8.Demo.RemoteServices;
 using NET8.Demo.Shared;
 using NET8.Demo.TemplateService;
@@ -38,8 +36,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 builder.Services.ConfigureCore();
 builder.Services.ConfigureServices();
-builder.Services.ConfigureRedis(builder.Configuration);
-builder.Services.ConfigureRabbitMQ(builder.Configuration);
 builder.Services.ConfigureRemoteService();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddControllersWithViews()

@@ -6,7 +6,7 @@ const userManagerConfig = {
   client_secret: 'MZ8KUfgCkAgaVLWSkIWDnaxy4TVshc1q',
   redirect_uri: `${window.location.origin}/login-callback`,
   response_type: 'code',
-    scope: 'openid profile TemplateServiceClient GlobalAdminFullAccess',
+  scope: 'openid profile TemplateServiceClientFullAccess GlobalAdminFullAccess',
   post_logout_redirect_uri: `${window.location.origin}/logout-callback`,
   userStore: new WebStorageStateStore({ store: window.localStorage }),
   automaticSilentRenew: true,

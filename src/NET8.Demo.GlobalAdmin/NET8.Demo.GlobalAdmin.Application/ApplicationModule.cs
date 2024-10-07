@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 using NET8.Demo.GlobalAdmin.Application.Contracts.IServices;
-using NET8.Demo.GlobalAdmin.Application.Handler;
 using NET8.Demo.GlobalAdmin.Application.IServices;
 using NET8.Demo.GlobalAdmin.Application.Services;
 using NET8.Demo.GlobalAdmin.Application.SignalRHubs;
@@ -18,7 +17,6 @@ public static class ApplicationModule
         services.AddScoped<IUserService, UserService>();
         services.AddTransient<IEmailService, EmailService>();
         services.AddScoped<IFileService, FileService>();
-        services.AddScoped<NotificationHandler>();
-        services.AddScoped<ILocationService, LocationService>();
+        //services.AddScoped<ILocationService, LocationService>();
     }
 }

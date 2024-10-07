@@ -24,16 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NET8.Demo.Shared\NET8.Demo.RabbitMQ\NET8.Demo.RabbitMQ.csproj" />
     <ProjectReference Include="..\NET8.Demo.GlobalAdmin.Application.Contracts\NET8.Demo.GlobalAdmin.Application.Contracts.csproj" />
     <ProjectReference Include="..\NET8.Demo.GlobalAdmin.Application\NET8.Demo.GlobalAdmin.Application.csproj" />
     <ProjectReference Include="..\NET8.Demo.GlobalAdmin.Core\NET8.Demo.GlobalAdmin.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="NET8.Demo.Redis">
-      <HintPath>..\..\NET8.Demo.Shared\NET8.Demo.Redis\bin\Debug\net8.0\NET8.Demo.Redis.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

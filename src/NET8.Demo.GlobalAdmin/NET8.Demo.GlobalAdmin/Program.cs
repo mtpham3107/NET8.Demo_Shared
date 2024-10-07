@@ -11,8 +11,6 @@ using NET8.Demo.GlobalAdmin.Application.Services;
 using NET8.Demo.GlobalAdmin.Application.SignalRHubs;
 using NET8.Demo.GlobalAdmin.Core.DbContexts;
 using NET8.Demo.GlobalAdmin.Domain.Entities;
-using NET8.Demo.RabbitMQ;
-using NET8.Demo.Redis;
 using NET8.Demo.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -89,8 +87,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 builder.Services.ConfigureCore();
 builder.Services.ConfigureServices();
-builder.Services.ConfigureRedis(builder.Configuration);
-builder.Services.ConfigureRabbitMQ(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddControllersWithViews()
                 .AddDataAnnotationsLocalization()

@@ -108,8 +108,8 @@ namespace NET8.Demo.GlobalAdmin.Core.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("34074d76-aa4e-400a-b755-e39b0a0782b0"),
-                            RoleId = new Guid("5d48f0d0-f9c6-4a7f-b390-0e14ec367288")
+                            UserId = new Guid("f572d584-a00b-4367-83a8-da38a93a14a1"),
+                            RoleId = new Guid("1c6e63ea-9d84-4132-a93d-a99cfcd15abb")
                         });
                 });
 
@@ -448,25 +448,25 @@ namespace NET8.Demo.GlobalAdmin.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5d48f0d0-f9c6-4a7f-b390-0e14ec367288"),
+                            Id = new Guid("1c6e63ea-9d84-4132-a93d-a99cfcd15abb"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("68020917-94d2-444f-8518-91fda2e29650"),
+                            Id = new Guid("31cb6290-be98-4c47-b40e-28b4afa96617"),
                             Name = "Supplier",
                             NormalizedName = "SUPPLIER"
                         },
                         new
                         {
-                            Id = new Guid("5ffde499-b597-45f9-8a1a-d91963d725fe"),
+                            Id = new Guid("c309f43a-9c48-467e-b379-477ccbd06812"),
                             Name = "Affiliate",
                             NormalizedName = "AFFILIATE"
                         },
                         new
                         {
-                            Id = new Guid("5560486a-6425-4158-baf1-c8a79821d451"),
+                            Id = new Guid("7fc7b705-6343-442f-a80d-7d71dcaab117"),
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -576,9 +576,9 @@ namespace NET8.Demo.GlobalAdmin.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("34074d76-aa4e-400a-b755-e39b0a0782b0"),
+                            Id = new Guid("f572d584-a00b-4367-83a8-da38a93a14a1"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0ec82805-d3ac-4878-aa63-ef64a22bf486",
+                            ConcurrencyStamp = "1d660896-9d48-4bce-985f-a8307f7b48a6",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             IsActive = true,
@@ -587,9 +587,9 @@ namespace NET8.Demo.GlobalAdmin.Core.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIuYWpfoYpNu0S1sSOhIuF0WJTe9c1DgMJl9GIsf+5BmN3lvtWoJXqO/b5aUpTAPJw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPKFxEgJ9E/XxFll3ssoIhl9+CZ+66NtvPEKEqyGCCz/NxlG82tqJgfXONVgegO23g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7940e067-6f9d-412a-bbc9-1c342f3976a5",
+                            SecurityStamp = "4ab12760-ed3e-4cca-a3c9-20fa25c9563d",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
